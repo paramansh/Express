@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>dictionary</title>
+<style>
+div#messageArea {
+	font-size: 4em;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	color: rgb(83, 175, 19);
+}
+</style>
+<script>
+var Input = document.getElementById("Input");
+Input.onkeypress = handleKeyPress;
+function handleKeyPress(e)
+{
+	var okButton = document.getElementById("okButton");
+	if(e.keyCode === 13)
+	{
+		okButton.click();
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+<form action="http://127.0.0.1:3000/output"  method = "GET">
+<input type="text" id="Input" placeholder="enter" name = "keyword">
+<button type="submit" id="okButton" >OK</button>
+</form>
+
+<div id="messageArea"></div>
+</body>
+</html>
